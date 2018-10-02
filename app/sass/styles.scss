@@ -1,0 +1,169 @@
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+
+@import "variables";
+@import "reset";
+@import "fonts";
+
+// rem is based on font size of <html> element, default set to 10px
+// so 150rem = 1500px
+html{
+	height:100%;
+	font-size: 10px;
+}
+body{
+	background-color: #fff;
+	color: #666;
+	font:1.6rem/2.4rem $fonts;
+}
+#container{
+	padding-top: 11.5rem;
+}
+.logo{
+	background: url(../images/gddaylogo.svg) no-repeat;
+	display: block;
+	width: 40.9rem;
+	height: 5.7rem;
+	
+	a{
+		display: block;
+		height: 100%;
+		text-indent: -9999px;
+	}
+}
+.more{
+	font:600 1.4rem $fontsHeading;
+	text-decoration: underline;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	&:hover{
+		text-decoration: none;
+	}
+}
+.hero{
+	color: #56575d;
+	line-height: 3.6rem;
+	.more{
+		color: #212d50;
+	}
+}
+.border-box{
+	box-sizing: border-box;
+}
+.nav{
+	.opener,
+	.close{
+		display: none;
+	}
+}
+@media screen and (max-width:1000px) {
+	.nav{
+		.inner{
+			display: none;
+		}
+		.opener{
+			background: url(../images/nav-opener-btn.png) no-repeat;
+			width: 31px;
+			height: 23px;
+			display: block;
+		}
+		cursor: pointer;
+		&.js-opened{
+			cursor: default;
+			.inner{
+				background: rgba(10,49,65,.9);
+				position: fixed;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				text-align: center;
+				color: #fff;
+				font-size: 2rem;
+				justify-content: center;
+				flex-direction: column;
+				a{
+					color: #fff;
+				}
+			}
+			.close{
+				display: block;
+				background: url(../images/close-btn.png) no-repeat;
+				width: 25px;
+				height: 25px;
+				position: absolute;
+				right: 1.8rem;
+				top: 2.2rem;
+				cursor: pointer;
+			}
+			ul.flex{
+				display: block;
+			}
+			li{
+				margin: 0 0 4rem;
+			}
+		}
+	}
+}
+@media screen and (max-width:768px) {
+	.mobile-bg-none{
+		background: none !important;
+	}
+}
+@media screen and (max-width:576px) {
+	.mobile-scroll{
+		.overflow-auto{
+			-webkit-overflow-scrolling: touch;
+		}
+		.w-128{
+			min-width: 76vw;
+			width: 100%;
+			margin-right: 3rem;
+			margin-bottom: 3rem;
+		}
+	}
+	.hero{
+		background: #fff !important;
+		padding-top: 0;
+		padding-bottom: 2rem;
+		h1{
+			background: url(../images/img16.jpg) no-repeat;
+			background-size: cover;
+			padding: 5rem 2rem;
+		}
+		p{
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+		.more{
+			margin-left: 2rem;
+		}
+	}
+	body{
+		background: #f7f7f7;
+	}
+	.section-services{
+		background: none !important;
+		padding-top: 0;
+		.heading{
+			background: url(../images/img17.jpg) no-repeat;
+			background-size: cover;
+			padding: 5rem 2rem;
+			margin-bottom: 2.6rem;
+		}
+	}
+	#header{
+		.mx-auto{
+			padding: 1.5rem;
+		}
+		.logo{
+			width: 25.4rem;
+			height: 3.5rem;
+		}
+	}
+	#container{
+		padding-top: 6.5rem;
+	}
+}

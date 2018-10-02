@@ -1,0 +1,31 @@
+{
+  "name": "sold",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "*",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-error-handle": "^1.0.0",
+    "gulp-inject-partials": "^1.0.4",
+    "gulp-js-import": "^1.0.6",
+    "gulp-minifier": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-remove-files": "^0.0.3",
+    "gulp-sass": "^3.1.0",
+    "tailwindcss": "^0.6.6"
+  },
+  "dependencies": {
+    "headroom.js": "^0.9.4",
+    "smooth-scroll": "^14.2.1"
+  }
+}
