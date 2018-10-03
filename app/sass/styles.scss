@@ -32,11 +32,20 @@ body{
 		text-indent: -9999px;
 	}
 }
+.hero{
+	strong{
+		line-height: 1.25;
+		margin-bottom: -.3rem;
+	}
+	h1{
+		text-shadow: 0 1rem 1.5rem #fff, 0 -1rem 1.5rem #fff, 1rem 0 1.5rem #fff, 1rem 0 1.5rem #fff;
+	}
+}
 .more{
 	font:600 1.4rem $fontsHeading;
 	text-decoration: underline;
 	text-transform: uppercase;
-	letter-spacing: 1px;
+	letter-spacing: .1rem;
 	&:hover{
 		text-decoration: none;
 	}
@@ -56,6 +65,68 @@ body{
 	.close{
 		display: none;
 	}
+	a{
+		@include animation($delay:.15s);
+		&:hover{
+			color: #0fb3d0;
+		}
+	}
+}
+#contact{
+	a{
+		color: #fff;
+	}
+}
+#lightbox-container{
+	position: fixed;
+	top: -9999px;
+	bottom: auto;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,.9);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	.lightbox-opened &{
+		top: 0;
+		bottom: 0;
+	}
+	.lightbox{
+		background: #fff;
+		padding-top: 3.5rem;
+		padding-bottom: 5rem;
+		position: relative;
+		box-sizing: border-box;
+		width: 77rem;
+		max-width: 82%;
+		.close{
+			position: absolute;
+			right: -5rem;
+			top: -5rem;
+			cursor: pointer;
+			color: #fff;
+			font-size: 4.8rem;
+		}
+	}
+	label{
+		color: #818181;
+		position: absolute;
+		left: 20px;
+		top:5px;
+	}
+	.txt{
+		color: #333;
+		font-weight: 400;
+		line-height: 3rem;
+		margin-top: .2rem;
+		padding-bottom: .4rem;
+	}
+	.submit{
+		background: #0fb3d0;
+		line-height: 2rem;
+		letter-spacing: .1rem;
+	}
 }
 @media screen and (max-width:1000px) {
 	.nav{
@@ -64,8 +135,8 @@ body{
 		}
 		.opener{
 			background: url(../images/nav-opener-btn.png) no-repeat;
-			width: 31px;
-			height: 23px;
+			width: 3.1rem;
+			height: 2.3rem;
 			display: block;
 		}
 		cursor: pointer;
@@ -91,8 +162,8 @@ body{
 			.close{
 				display: block;
 				background: url(../images/close-btn.png) no-repeat;
-				width: 25px;
-				height: 25px;
+				width: 2.5rem;
+				height: 2.5rem;
 				position: absolute;
 				right: 1.8rem;
 				top: 2.2rem;
@@ -107,17 +178,31 @@ body{
 		}
 	}
 }
+.animated{
+	@include animation($delay:.15s);
+	.more{
+		@include animation($delay:.15s);
+	}
+	&:hover{
+		.more{
+			color: #0fb3d0;
+		}
+	}
+}
 @media screen and (max-width:768px) {
 	.mobile-bg-none{
 		background: none !important;
 	}
 }
-@media screen and (max-width:576px) {
+@media screen and (max-width:575px) {
 	.mobile-scroll{
 		.overflow-auto{
+			position: relative;
+			z-index: 1;
 			-webkit-overflow-scrolling: touch;
 		}
-		.w-128{
+		.w-128,
+		.item{
 			min-width: 76vw;
 			width: 100%;
 			margin-right: 3rem;
@@ -127,7 +212,7 @@ body{
 	.hero{
 		background: #fff !important;
 		padding-top: 0;
-		padding-bottom: 2rem;
+		padding-bottom: 4rem;
 		h1{
 			background: url(../images/img16.jpg) no-repeat;
 			background-size: cover;
@@ -165,5 +250,18 @@ body{
 	}
 	#container{
 		padding-top: 6.5rem;
+	}
+	#lightbox-container{
+		.lightbox{
+			height: 100%;
+			overflow: auto;
+			min-width: 100%;
+			.close{
+				top: 1rem;
+				right: 1rem;
+				color: #000;
+				font-size: 3rem;
+			}
+		}
 	}
 }

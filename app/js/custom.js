@@ -1,9 +1,5 @@
 'use strict';
 
-document.addEventListener("DOMContentLoaded", function () {
-  new SmoothScroll('.scrollto', { updateURL: false, offset: 110 });
-});
-
 var nav = document.querySelector('.nav');
 if (nav) {
   nav.querySelector('.opener').onclick = function () {
@@ -21,3 +17,23 @@ document.addEventListener('scrollStop', function () {
     }
   }
 }, false);
+
+new SmoothScroll('.scrollto', { updateURL: false, offset: 110 });
+
+var lightbox = document.getElementById('lightbox-container');
+
+if (lightbox) {
+  var openLighboxLinks = document.querySelectorAll('.open-lightbox');
+  var closeLighboxLink = lightbox.querySelector('.close');
+  var body = document.querySelector('body');
+
+  openLighboxLinks.forEach(function (element) {
+    element.onclick = function (e) {
+      e.preventDefault();
+      body.classList.add('lightbox-opened');
+    };
+  });
+  closeLighboxLink.onclick = function () {
+    body.classList.remove('lightbox-opened');
+  };
+}

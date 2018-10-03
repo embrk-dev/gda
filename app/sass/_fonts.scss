@@ -56,8 +56,19 @@
   url('#{$fonts-path}fa-brands-400.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'fontawesomelight';
+  font-style: normal;
+  font-weight: normal;
+  src:  url('#{$fonts-path}fa-light-300.woff2') format('woff2'),
+  url('#{$fonts-path}fa-light-300.woff') format('woff');
+}
+
 .fab {
   font-family: 'fontawesomebrands';
+}
+.fal {
+  font-family: 'fontawesomelight';
 }
 
 @import "fontawesome/fontawesome";
